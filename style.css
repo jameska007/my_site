@@ -1,0 +1,216 @@
+:root {
+  --bg: #080b10;
+  --bg-alt: #10141f;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.08);
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --card-bg: #111827;
+  --border: #1f2933;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #111827 0, #020617 55%, #020617 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header / nav */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Hero */
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero-inner {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  max-width: 560px;
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent), #38bdf8);
+  color: #020617;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.7);
+}
+
+/* Sections */
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background: radial-gradient(circle at top, #020617 0, #020617 100%);
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Cards */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), #020617);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.3rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+/* Kontakt */
+
+.contact-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  margin-top: 1rem;
+}
+
+.site-footer p {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .nav {
+    font-size: 0.9rem;
+  }
+
+  .nav a {
+    margin-left: 1rem;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+}
